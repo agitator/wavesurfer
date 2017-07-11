@@ -1,2 +1,3 @@
-# wavesurfer
-wavesurfer-js audio player pattern
+# pat-wavesurfer
+
+A [Patternslib](http://patternslib.com) wavesurfer.js audio player pattern.
