@@ -1,21 +1,16 @@
 {
-  "name": "pat-leaflet",
-  "description": "Patternslib Leaflet integration",
+  "name": "pat-wavesurfer",
+  "description": "Patternslib wavesurfer integration",
   "devDependencies": {},
   "dependencies": {
     "jquery": "",
-    "patternslib": "master",
-    "wavesurfer": ""
-  },
-  "resolutions": {
-    "wavesurfer": "~4.7.0"
+    "patternslib": "master"
   },
   "keywords": [
     "patternslib",
     "pattern",
-    "leaflet",
-    "map",
-    "geo"
+    "wavesurfer",
+    "audio"
   ],
   "license": "BSD-3-Clause",
   "ignore": [

@@ -1,7 +1,7 @@
 require.config({
     paths: {
         "pat-wavesurfer":    "src/pat-wavesurfer",
-        "wavesurfer":        "bower_components/wavesurfer/dist/wavesurfer-src",
+        "wavesurfer":        "node_modules/wavesurfer/dist/wavesurfer",
         // BASE DEPENDENCIES
         "jquery":            "bower_components/jquery/dist/jquery",
         "jquery.browser":    "bower_components/jquery.browser/dist/jquery.browser",

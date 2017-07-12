@@ -14,9 +14,9 @@
         // If require.js is not available, you'll need to make sure that these
         // global variables are available.
         factory($, patterns.Base, patterns, patterns.Parser, patterns.logger,
-            patterns.wavesurfer, ;
+            patterns.wavesurfer);
     }
-}(this, function($, Base, registry, Parser, logger, L) {
+}(this, function($, Base, registry, Parser, logger, W) {
     'use strict';
 
     var log = logger.getLogger('pat-wavesurfer');
@@ -24,12 +24,12 @@
 
     var parser = new Parser('wavesurfer');
 
-    // default controls
-    parser.addArgument('fullscreencontrol', true);
-    parser.addArgument('zoomcontrol', true);
+    // // default controls
+    // parser.addArgument('fullscreencontrol', true);
+    // parser.addArgument('zoomcontrol', true);
 
-    // disabled controls
-    parser.addArgument('minimap', false);
+    // // disabled controls
+    // parser.addArgument('minimap', false);
 
 
     return Base.extend({
@@ -37,26 +37,18 @@
         trigger: '.pat-wavesurfer',
 
         init: function initUndefined () {
-            var options = this.options = parser.parse(this.$el);
+            // var options = this.options = parser.parse(this.$el);
 
-            var baseLayers,
-                marker_layer;
-
-            // MAP INIT
-            var map = this.map = new L.Map(this.$el[0], {
-                fullscreenControl: options.fullscreencontrol,
-                zoomControl: options.zoomcontrol,
-                // Leaflet.Sleep options
-                sleep: true,
-                sleepNote: false,
-                hoverToWake: false,
-                sleepOpacity: 1
+            var wavesurfer = WaveSurfer.create({
+                container: '#waveform'
             });
+
+
 
             log.debug('pattern initialized');
         },
 
-
-
     });
+
+
 }));

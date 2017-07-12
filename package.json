@@ -2,7 +2,9 @@
   "name": "pat-wavesurfer",
   "description": "Patternslib wavesurfer.js integration",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "wavesurfer": "^1.3.4"
+  },
   "devDependencies": {
     "bower": "latest",
     "requirejs": "",
