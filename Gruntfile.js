@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             },
             js: {
                 src: [
-                    "src/node_modules/wavesurfer/dist/wavesurfer.js"
+                    "node_modules/wavesurfer/dist/wavesurfer.js"
                 ],
                 dest: dest_path + "libs.js"
             },
