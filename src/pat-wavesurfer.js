@@ -25,11 +25,8 @@
     var parser = new Parser('wavesurfer');
 
     // // default controls
-    parser.addArgument('url', false);
-    // parser.addArgument('zoomcontrol', true);
+    parser.addArgument('url', undefined);
 
-    // // disabled controls
-    // parser.addArgument('minimap', false);
 
     $("[data-pat-wavesurfer]").each(function() {
         var options = parser.parse($(this));
@@ -39,25 +36,27 @@
         name: 'wavesurfer',
         trigger: '.pat-wavesurfer',
 
-        init: function initUndefined () {
+        init: function patWavesurferInit () {
+
             var options = this.options = parser.parse(this.$el);
 
             var wavesurfer = WaveSurfer.create({
-                container: '.pat-wavesurfer'
+                container: '.pat-wavesurfer',
             });
-            wavesurfer.load('https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3');
+            wavesurfer.load(options.url);
 
-            this.$el.prepend('<button class="btn btn-primary" onclick="wavesurfer.playPause()">\
+            this.$el.prepend('<button class="btn btnPlay">\
                                     Play\
                                 </button>\
                             ');
 
-
-            // wavesurfer.playPause()
+            $(this.$el.children('.btnPlay')).bind( "click", function() {
+              wavesurfer.playPause();
+            });
 
 
             log.debug('pattern initialized');
-        },
+            },
 
     });
 
