@@ -27,6 +27,40 @@
     // // default controls
     parser.addArgument('url', undefined);
 
+    // basic player settings
+    parser.addArgument('height', 128);
+    parser.addArgument('waveColor', '#999');
+    parser.addArgument('progressColor', '#555');
+    parser.addArgument('cursorColor', '#333');
+    parser.addArgument('cursorWidth', 1);
+
+    // waveform settings
+    parser.addArgument('barHeight', 1);
+    parser.addArgument('barWidth', undefined);
+    parser.addArgument('fillParent', true);
+    parser.addArgument('minPxPerSec', 50);
+
+    // extended player settings
+    parser.addArgument('maxCanvasWidth', 4000);
+    parser.addArgument('renderer', 'Canvas');
+    parser.addArgument('hideScrollbar', false);
+    parser.addArgument('responsive', true);
+    parser.addArgument('scrollParent', false);
+
+    // extended waveform settings
+    parser.addArgument('interact', true);
+    parser.addArgument('pixelRatio', window.devicePixelRatio);
+    parser.addArgument('autoCenter', true);
+
+    // play and sound settings
+    parser.addArgument('audioRate', 1);
+    parser.addArgument('normalize', false);
+    parser.addArgument('skipLength', 2);
+
+    // backend
+    parser.addArgument('backend', 'WebAudio');
+    parser.addArgument('mediaType', 'audio');
+
 
     $("[data-pat-wavesurfer]").each(function() {
         var options = parser.parse($(this));
@@ -42,6 +76,28 @@
 
             var wavesurfer = WaveSurfer.create({
                 container: '.pat-wavesurfer',
+                height: options.height,
+                waveColor: options.waveColor,
+                progressColor: options.progressColor,
+                cursorColor: options.cursorColor,
+                cursorWidth: options.cursorWidth,
+                barHeight: options.barHeight,
+                barWidth: options.barWidth,
+                fillParent: options.fillParent,
+                minPxPerSec: options.minPxPerSec,
+                maxCanvasWidth: options.maxCanvasWidth,
+                renderer: options.renderer,
+                hideScrollbar: options.hideScrollbar,
+                responsive: options.responsive,
+                scrollParent: options.scrollParent,
+                interact: options.interact,
+                pixelRatio: options.pixelRatio,
+                autoCenter: options.autoCenter,
+                audioRate: options.audioRate,
+                normalize: options.normalize,
+                skipLength: options.skipLength,
+                backend: options.backend,
+                mediaType: options.mediaType
             });
             wavesurfer.load(options.url);
 
