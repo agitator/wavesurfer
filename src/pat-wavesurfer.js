@@ -25,25 +25,35 @@
     var parser = new Parser('wavesurfer');
 
     // // default controls
-    // parser.addArgument('fullscreencontrol', true);
+    parser.addArgument('url', false);
     // parser.addArgument('zoomcontrol', true);
 
     // // disabled controls
     // parser.addArgument('minimap', false);
 
+    $("[data-pat-wavesurfer]").each(function() {
+        var options = parser.parse($(this));
+    });
 
     return Base.extend({
         name: 'wavesurfer',
         trigger: '.pat-wavesurfer',
 
         init: function initUndefined () {
-            // var options = this.options = parser.parse(this.$el);
+            var options = this.options = parser.parse(this.$el);
 
             var wavesurfer = WaveSurfer.create({
-                container: '#waveform'
+                container: '.pat-wavesurfer'
             });
             wavesurfer.load('https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3');
-            wavesurfer.playPause()
+
+            this.$el.prepend('<button class="btn btn-primary" onclick="wavesurfer.playPause()">\
+                                    Play\
+                                </button>\
+                            ');
+
+
+            // wavesurfer.playPause()
 
 
             log.debug('pattern initialized');

@@ -5,20 +5,12 @@
     <title>pat-wavesurfer demo</title>
     <!-- <link rel="stylesheet" href="bower_components/wavesurfer/dist/wavesurfer.css"/> -->
     <link rel="stylesheet" href="src/pat-wavesurfer.css"/>
-    <script data-main="main" src="bower_components/requirejs/require.js"></script>
+    <script data-main="main" src="node_modules/requirejs/require.js"></script>
   </head>
   <body role="document">
 
     <h1>pat-wavesurfer demo - minimal</h1>
-    <div class="pat-wavesurfer" id="waveform"></div>
-
-    <div style="text-align: center">
-      <button class="btn btn-primary" onclick="wavesurfer.playPause()">
-        <i class="glyphicon glyphicon-play"></i>
-        Play
-      </button>
-    </div>
-
+    <div class="pat-wavesurfer" data-pat-wavesurfer="url: 'https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3'"></div>
 
   </body>
 </html>
