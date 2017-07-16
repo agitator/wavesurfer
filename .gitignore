@@ -1,0 +1,5 @@
+/node_modules
+/bower_components
+/stamp-npm
+/stamp-bower
+/package-lock.json
