@@ -75,7 +75,7 @@
             var options = this.options = parser.parse(this.$el);
 
             var wavesurfer = WaveSurfer.create({
-                container: '.pat-wavesurfer',
+                container: this.$el[0],
                 height: options.height,
                 waveColor: options.waveColor,
                 progressColor: options.progressColor,
